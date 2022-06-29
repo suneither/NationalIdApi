@@ -142,19 +142,11 @@ public class NationalIdsController {
         if(validationResponse.getValidIds().size() != 0)
         validationResponse.getValidIds().forEach(nationalId -> {
             nationalIdRepository.save(nationalId);
-//            if(nationalId.getValidationErrors().size() != 0){
-//                for (ValidationError validationError : nationalId.getValidationErrors())
-//                    validationErrorRepository.save(validationError);
-//            }
         });
 
         if(validationResponse.getInvalidIds().size() != 0)
         validationResponse.getInvalidIds().forEach(nationalId -> {
             nationalIdRepository.save(nationalId);
-//            if(nationalId.getValidationErrors().size() != 0){
-//                for (ValidationError validationError : nationalId.getValidationErrors())
-//                    validationErrorRepository.save(validationError);
-//            }
         });
 
     }
@@ -163,10 +155,7 @@ public class NationalIdsController {
         ScheduledExecutorService ses = Executors.newScheduledThreadPool(1);
 
         Runnable task1 = () -> {
-            // make deletion of database data
-            System.out.println("Running...task1 - count : ");
             nationalIdRepository.deleteNationalId();
-
         };
 
         ses.scheduleAtFixedRate(task1, 5, 120, TimeUnit.SECONDS);
