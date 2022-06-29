@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="NationalIdValidation">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../NationalIdValidation/out/artifacts/NationalIdValidation_jar/NationalIdValidation.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
